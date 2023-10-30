@@ -24,4 +24,10 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebPOS.Domain\WebPOS.Domain.csproj" />
+    <ProjectReference Include="..\WebPOS.Infrastructure\WebPOS.Infrastructure.csproj" />
+    <ProjectReference Include="..\WebPOS.Utilitties\WebPOS.Utilitties.csproj" />
+  </ItemGroup>
+
 </Project>

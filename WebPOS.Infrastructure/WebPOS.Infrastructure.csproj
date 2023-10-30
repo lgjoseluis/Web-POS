@@ -18,4 +18,9 @@
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebPOS.Domain\WebPOS.Domain.csproj" />
+    <ProjectReference Include="..\WebPOS.Utilitties\WebPOS.Utilitties.csproj" />
+  </ItemGroup>
+
 </Project>
