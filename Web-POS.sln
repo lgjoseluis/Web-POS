@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5603BEDE-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extra", "extra", "{3809952D-F2C4-43DF-8C96-733E2424955D}"
 	ProjectSection(SolutionItems) = preProject
+		Commands.txt = Commands.txt
 		POS.sql = POS.sql
 	EndProjectSection
 EndProject

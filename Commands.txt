@@ -1,0 +1,2 @@
+Generar las entidades en el proyecto de Domain, luego organizar el context y las configuraciones de las entidades
+Scaffold-DbContext "Server=***;Database=POS;User ID=**; Password=***;Encrypt=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities
