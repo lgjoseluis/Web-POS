@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebPOS.Infrastructure.Entities;
+using WebPOS.Infrastructure.Persistences.Contracts;
+using WebPOS.Infrastructure.Persistences.Repositories;
 
 namespace WebPOS.Infrastructure.Extensions
 {
@@ -15,6 +17,8 @@ namespace WebPOS.Infrastructure.Extensions
                     configuration.GetConnectionString("POSConnection"), b => b.MigrationsAssembly(assembly)),
                     ServiceLifetime.Transient
                 );
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             return services;
         }
