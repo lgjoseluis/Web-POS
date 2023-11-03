@@ -2,7 +2,7 @@
 {
     public class BaseFiltersRequest:BasePaginationRequest
     {
-        public int? NumFilters { get; set; } = null;
+        public int? TypeFilter { get; set; } = null;
 
         public string? TextFilter { get; set; } = null;
 
