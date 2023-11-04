@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\WebPOS.Application\WebPOS.Application.csproj" />
     <ProjectReference Include="..\WebPOS.Infrastructure\WebPOS.Infrastructure.csproj" />
     <ProjectReference Include="..\WebPOS.Utilitties\WebPOS.Utilitties.csproj" />
