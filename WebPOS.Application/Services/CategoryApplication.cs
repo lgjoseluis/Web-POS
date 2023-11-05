@@ -133,7 +133,7 @@ namespace WebPOS.Application.Services
 
             Category? categoryEdit = await _unitOfWork.CategoryRepository.CategoryById(categoryId);
             
-            if(categoryEdit != null) 
+            if(categoryEdit is null) 
             {
                 response.IsSuccess = false;
                 response.Message = MessagesReply.MESSAGE_QUERY_EMPTY;
@@ -142,6 +142,8 @@ namespace WebPOS.Application.Services
             }
 
             Category category = _mapper.Map<Category>(request);
+
+            category.CategoryId = categoryId;
 
             response.Data = await _unitOfWork.CategoryRepository.UpdateCategory(category);
 

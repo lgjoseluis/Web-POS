@@ -34,22 +34,22 @@ namespace WebPOS.Infrastructure.Persistences.Repositories
                 switch (filters.TypeFilter) 
                 {
                     case 1: 
-                        categories.Where(x => x.Name!.Contains(filters.TextFilter));
+                        categories = categories.Where(x => x.Name!.Contains(filters.TextFilter, StringComparison.OrdinalIgnoreCase));
                         break;
                     case 2:
-                        categories.Where(x => x.Name!.Contains(filters.TextFilter));
+                        categories = categories.Where(x => x.Description!.Contains(filters.TextFilter));
                         break;
                 }
             }
 
             if(filters.StateFilter is not null)
             {
-                categories.Where(x => x.State.Equals(filters.StateFilter));
+                categories = categories.Where(x => x.State.Equals(filters.StateFilter));
             }
 
             if (!string.IsNullOrEmpty(filters.StartDate) && !string.IsNullOrEmpty(filters.EndDate))
             {
-                categories.Where(
+                categories = categories.Where(
                         x => x.AuditCreateDate >= Convert.ToDateTime(filters.StartDate) && 
                             x.AuditCreateDate <= Convert.ToDateTime(filters.EndDate).AddDays(1)
                 );
@@ -70,7 +70,7 @@ namespace WebPOS.Infrastructure.Persistences.Repositories
         {
             IEnumerable<Category> categories = await _posContext.Categories
                 .Where(
-                    x => x.State.Equals(StatusType.ACTIVE) &&
+                    x => x.State.Equals((int)StatusType.ACTIVE) &&
                         x.AuditDeleteDate == null &&
                         x.AuditDeleteUser == null
                 ).AsNoTracking()
@@ -121,8 +121,11 @@ namespace WebPOS.Infrastructure.Persistences.Repositories
                 .AsNoTracking()
                 .SingleAsync(x => x.CategoryId == categoryId);
 
+            category.State = 0;
             category.AuditDeleteUser = 1;
             category.AuditDeleteDate = DateTime.Now;
+
+            _posContext.Categories.Update(category);
 
             int recordsAffected = await _posContext.SaveChangesAsync();
 
