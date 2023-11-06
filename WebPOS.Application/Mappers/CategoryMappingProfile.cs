@@ -18,6 +18,7 @@ namespace WebPOS.Application.Mappers
         public CategoryMappingProfile()
         {
             CreateMap<Category, CategoryResponseDto>()
+                .ForMember(x => x.CategoryId, x => x.MapFrom(y => y.Id))
                 .ForMember(x => x.StateCategory, x => x.MapFrom(y => y.State.Equals((int)StatusType.ACTIVE) ? CommonStrings.ACTIVE : CommonStrings.INACTIVE))
                 .ReverseMap();
 
@@ -27,6 +28,7 @@ namespace WebPOS.Application.Mappers
             CreateMap<CategoryRequestDto, Category>();
 
             CreateMap<Category, CategorySelectResponseDto>()
+                .ForMember(x => x.CategoryId, x => x.MapFrom(y => y.Id))
                 .ReverseMap();
         }
     }

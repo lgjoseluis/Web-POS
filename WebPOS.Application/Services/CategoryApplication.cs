@@ -49,7 +49,7 @@ namespace WebPOS.Application.Services
         public async Task<BaseResponse<IEnumerable<CategorySelectResponseDto>>> ListSelectCategories()
         {
             BaseResponse<IEnumerable<CategorySelectResponseDto>> response = new BaseResponse<IEnumerable<CategorySelectResponseDto>>();
-            IEnumerable<Category> categories = await _unitOfWork.CategoryRepository.ListSelectCategory();
+            IEnumerable<Category> categories = await _unitOfWork.CategoryRepository.GetAllAsync();
 
             if (categories is not null)
             {
@@ -69,7 +69,7 @@ namespace WebPOS.Application.Services
         public async Task<BaseResponse<CategoryResponseDto>> GetCategoryById(int categoryId)
         {
             BaseResponse<CategoryResponseDto> response = new BaseResponse<CategoryResponseDto>();
-            Category? category = await _unitOfWork.CategoryRepository.CategoryById(categoryId);
+            Category? category = await _unitOfWork.CategoryRepository.GetByIdAsync(categoryId);
 
             if(category is not null)
             {
@@ -101,7 +101,7 @@ namespace WebPOS.Application.Services
             }
 
             Category category = _mapper.Map<Category>(request);
-            response.Data = await _unitOfWork.CategoryRepository.AddCategory(category);
+            response.Data = await _unitOfWork.CategoryRepository.AddAsync(category);
 
             if(response.Data)
             {
@@ -131,7 +131,7 @@ namespace WebPOS.Application.Services
                 return response;
             }
 
-            Category? categoryEdit = await _unitOfWork.CategoryRepository.CategoryById(categoryId);
+            Category? categoryEdit = await _unitOfWork.CategoryRepository.GetByIdAsync(categoryId);
             
             if(categoryEdit is null) 
             {
@@ -143,9 +143,9 @@ namespace WebPOS.Application.Services
 
             Category category = _mapper.Map<Category>(request);
 
-            category.CategoryId = categoryId;
+            category.Id = categoryId;
 
-            response.Data = await _unitOfWork.CategoryRepository.UpdateCategory(category);
+            response.Data = await _unitOfWork.CategoryRepository.UpdateAsync(category);
 
             if (response.Data)
             {
@@ -164,7 +164,7 @@ namespace WebPOS.Application.Services
         public async Task<BaseResponse<bool>> DeleteCategory(int categoryId)
         {
             BaseResponse<bool> response = new BaseResponse<bool>();
-            Category? category = await _unitOfWork.CategoryRepository.CategoryById(categoryId);
+            Category? category = await _unitOfWork.CategoryRepository.GetByIdAsync(categoryId);
 
             if (category is null) 
             { 
@@ -174,7 +174,7 @@ namespace WebPOS.Application.Services
                 return response;
             }
 
-            response.Data = await _unitOfWork.CategoryRepository.DeleteCategory(categoryId);
+            response.Data = await _unitOfWork.CategoryRepository.DeleteAsync(categoryId);
 
             if (response.Data) 
             { 
