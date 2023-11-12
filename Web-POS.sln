@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extra", "extra", "{3809952D
 		POS.sql = POS.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.API", "WebPOS.API\WebPOS.API.csproj", "{1B50B905-C9F8-4A40-AE60-87708AB3D6D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPOS.API", "WebPOS.API\WebPOS.API.csproj", "{1B50B905-C9F8-4A40-AE60-87708AB3D6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.Domain", "WebPOS.Domain\WebPOS.Domain.csproj", "{A9E60135-81C6-441F-8C7C-2FE14DBE4198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPOS.Domain", "WebPOS.Domain\WebPOS.Domain.csproj", "{A9E60135-81C6-441F-8C7C-2FE14DBE4198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.Application", "WebPOS.Application\WebPOS.Application.csproj", "{6A10C70B-9DBD-4443-B7C5-0E9A966EF2D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPOS.Application", "WebPOS.Application\WebPOS.Application.csproj", "{6A10C70B-9DBD-4443-B7C5-0E9A966EF2D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.Infrastructure", "WebPOS.Infrastructure\WebPOS.Infrastructure.csproj", "{A3F7BE9C-3401-4743-B95A-5B9E6F0DCF36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPOS.Infrastructure", "WebPOS.Infrastructure\WebPOS.Infrastructure.csproj", "{A3F7BE9C-3401-4743-B95A-5B9E6F0DCF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.Utilitties", "WebPOS.Utilitties\WebPOS.Utilitties.csproj", "{4C1B63EA-514B-468D-A3AB-350F757321B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPOS.Utilitties", "WebPOS.Utilitties\WebPOS.Utilitties.csproj", "{4C1B63EA-514B-468D-A3AB-350F757321B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPOS.Application.IntegrationTests.NUnitTests", "test\WebPOS.Application.IntegrationTests.NUnitTests\WebPOS.Application.IntegrationTests.NUnitTests.csproj", "{CE5BED42-45A8-4312-A9F0-5C222F5C971B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{4C1B63EA-514B-468D-A3AB-350F757321B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C1B63EA-514B-468D-A3AB-350F757321B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C1B63EA-514B-468D-A3AB-350F757321B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5BED42-45A8-4312-A9F0-5C222F5C971B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5BED42-45A8-4312-A9F0-5C222F5C971B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5BED42-45A8-4312-A9F0-5C222F5C971B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5BED42-45A8-4312-A9F0-5C222F5C971B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{6A10C70B-9DBD-4443-B7C5-0E9A966EF2D5} = {B5589859-2BA8-41E7-9434-CFA3641E91B0}
 		{A3F7BE9C-3401-4743-B95A-5B9E6F0DCF36} = {B5589859-2BA8-41E7-9434-CFA3641E91B0}
 		{4C1B63EA-514B-468D-A3AB-350F757321B7} = {B5589859-2BA8-41E7-9434-CFA3641E91B0}
+		{CE5BED42-45A8-4312-A9F0-5C222F5C971B} = {5603BEDE-B30D-4582-AC30-443711669B76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0616340-2007-414B-B86C-5C175D054C82}
